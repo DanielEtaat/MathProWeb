@@ -1,0 +1,47 @@
+.topics-top {
+  padding-bottom: 100px;
+  padding-left: 20%;
+  padding-right: 20%;
+  background: #4c878f;
+  text-align: center;
+}
+
+.topics-header {
+  padding-top: 150px;
+  padding-bottom: 20px;
+  font-family: Courier, sans-serif;
+  font-weight: bold;
+  font-size: 3rem;
+  line-height: 1;
+  color: white;
+  text-transform: uppercase;
+}
+
+.topics-body {
+  text-align: center;
+  font-family: Helvetica, sans-serif;
+  font-weight: 100;
+  font-size: 1.25rem;
+  line-height: 1.25;
+  color: white  ;
+  padding-bottom: 50px;
+}
+
+.topics {
+  text-align: center;
+  padding: 125px 20% 50px 20%;
+  background: #fcfcfc;
+}
+
+.btn-topic {
+  margin-bottom: 50px;
+  border: 0;
+  font-family: "Courier";
+  font-size: 1.25rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding: 3px 20px;
+  background: #e8e8e8;
+  color: black;
+  opacity: 0.9
+}

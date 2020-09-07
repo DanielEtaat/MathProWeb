@@ -1,0 +1,147 @@
+body {
+  background: white;
+}
+
+.nav-left {
+  top: 5px;
+  left: 20px;
+  position: absolute;
+  color: white;
+  font-size: 20px;
+  font-weight: 200;
+}
+
+.nav-right {
+  z-index: 2;
+  cursor: pointer;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  color: white;
+  font-size: 15px;
+  padding: 5px 10px;
+  font-family: Helvetica, sans-serif;
+  font-weight: 200;
+}
+
+.title {
+  background-image: linear-gradient(to right bottom, #36656b, #4c878f);
+  height: 90vh;
+  padding: 100px;
+}
+
+.title-img {
+  left: 0;
+  opacity: 0.1;
+  position: absolute;
+  width: 100%;
+  height: 90vh;
+  background-image: url("imgs/mathboard.jpg");
+}
+
+.title-header {
+  font-family: Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 4rem;
+  line-height: 1;
+  color: white;
+}
+
+.title-body {
+  font-family: Helvetica, sans-serif;
+  font-weight: 100;
+  font-size: 1.25rem;
+  line-height: 1.25;
+  color: white;
+  margin-right: 25%;
+}
+
+.subjects {
+  text-align: left;
+  padding-bottom: 75px;
+  background: #fcfcfc;
+}
+
+.subject-header {
+  padding-top: 100px;
+  padding-bottom: 20px;
+  text-align: left;
+  font-family: Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 3rem;
+  line-height: 1;
+  color: #363c3d;
+}
+
+.subject-body {
+  text-align: left;
+  font-family: Helvetica, sans-serif;
+  font-weight: 100;
+  font-size: 1.25rem;
+  line-height: 1.25;
+  color: #363c3d;
+  padding-bottom: 50px;
+}
+
+.subject {
+  padding-bottom: 50px;
+}
+
+.btn-subject {
+  border: 0;
+  font-family: "Courier";
+  font-size: 1.25rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding: 3px 20px;
+  background: #e8e8e8;
+  color: black;
+  opacity: 0.9
+}
+
+.btn-subject:hover {
+  cursor: pointer;
+  background: #dedede;
+  transition: background 0.1s;
+}
+
+.btn-subject > a {
+  color: inherit;
+  text-decoration: none!important;
+}
+
+.footer {
+  height: 75px;
+  background: #fcfcfc;
+}
+
+@media (max-width: 1200px) {
+  .subjects {
+    text-align: center;
+  }
+}
+
+@media (max-width: 600px) {
+
+  .title {
+    padding-left: 35px;
+  }
+
+  .title-header {
+    font-size: 3.25rem;
+  }
+
+  .title-body {
+    font-size: 1rem;
+    margin-right: 0%;
+  }
+
+  .subject-header {
+    font-size: 2rem;
+  }
+
+  .subject-body {
+    font-size: 1rem;
+  }
+
+}
