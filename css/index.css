@@ -113,6 +113,14 @@ body {
 .footer {
   height: 75px;
   background: #fcfcfc;
+  text-align: right;
+  padding: 0 50px;
+  font-family: Helvetica, sans-serif;
+  font-weight: 100;
+  font-size: 1rem;
+  line-height: 1.25;
+  color: #363c3d;
+  padding-bottom: 50px;
 }
 
 @media (max-width: 1200px) {

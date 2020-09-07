@@ -16,83 +16,95 @@
 
   <body>
 
-    <div class="nav-left">&#8734;</div>
-    <div class="nav-right">Sign In</div>
+    <div class="nav-left" style="color: black;">&#8734;</div>
+    <div class="nav-right" style="color: black;">Sign In</div>
 
     <div class="container-fluid">
 
       <div class="topics-top row">
         <div class="col-12 topics-header" id="subject"></div>
         <div class="col-12 topics-body">
-          Click on the topics below which you wish to study. The topics you select will be used to generate your unique problem set.
+          Click on the topics below which you wish to study. Your chosen topics will turn green as you click on them.
+          The topics you select will be used to generate your unique problem set.
         </div>
       </div>
+
+      <div class="row topics-summary">
+        <div class="col-12">
+          Selected Topics: <span id="topics-list" style="font-weight: 100;"></span>
+        </div>
+      </div>
+
 
       <div class="topics row">
 
         <div class="col-12 col-md-4">
-          <button type="button" class="btn-topic">
+          <button onclick="selectTopic(this);" type="button" class="btn-topic">
             Topic
           </button>
         </div>
         <div class="col-12 col-md-4">
-          <button type="button" class="btn-topic">
+          <button onclick="selectTopic(this);" type="button" class="btn-topic">
             Topic
           </button>
         </div>
         <div class="col-12 col-md-4">
-          <button type="button" class="btn-topic">
+          <button onclick="selectTopic(this);" type="button" class="btn-topic">
             Topic
           </button>
         </div>
 
         <div class="col-12 col-md-4">
-          <button type="button" class="btn-topic">
+          <button onclick="selectTopic(this);" type="button" class="btn-topic">
             Topic
           </button>
         </div>
         <div class="col-12 col-md-4">
-          <button type="button" class="btn-topic">
+          <button onclick="selectTopic(this);" type="button" class="btn-topic">
             Topic
           </button>
         </div>
         <div class="col-12 col-md-4">
-          <button type="button" class="btn-topic">
+          <button onclick="selectTopic(this);" type="button" class="btn-topic">
             Topic
           </button>
         </div>
 
         <div class="col-12 col-md-4">
-          <button type="button" class="btn-topic">
+          <button onclick="selectTopic(this);" type="button" class="btn-topic">
             Topic
           </button>
         </div>
         <div class="col-12 col-md-4">
-          <button type="button" class="btn-topic">
+          <button onclick="selectTopic(this);" type="button" class="btn-topic">
             Topic
           </button>
         </div>
         <div class="col-12 col-md-4">
-          <button type="button" class="btn-topic">
+          <button onclick="selectTopic(this);" type="button" class="btn-topic">
             Topic
           </button>
         </div>
 
         <div class="col-12 col-md-4">
-          <button type="button" class="btn-topic">
+          <button onclick="selectTopic(this);" type="button" class="btn-topic">
             Topic
           </button>
         </div>
         <div class="col-12 col-md-4">
-          <button type="button" class="btn-topic">
+          <button onclick="selectTopic(this);" type="button" class="btn-topic">
             Topic
           </button>
         </div>
         <div class="col-12 col-md-4">
-          <button type="button" class="btn-topic">
+          <button onclick="selectTopic(this);" type="button" class="btn-topic">
             Topic
           </button>
         </div>
+
+      </div>
+
+      <div class="row submit">
 
       </div>
 

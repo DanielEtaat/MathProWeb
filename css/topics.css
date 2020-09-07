@@ -1,19 +1,15 @@
 .topics-top {
-  padding-bottom: 100px;
-  padding-left: 20%;
-  padding-right: 20%;
-  background: #4c878f;
+  padding: 150px 20%;
+  background: #c5dfe6;
   text-align: center;
 }
 
 .topics-header {
-  padding-top: 150px;
-  padding-bottom: 20px;
   font-family: Courier, sans-serif;
   font-weight: bold;
   font-size: 3rem;
   line-height: 1;
-  color: white;
+  color: black;
   text-transform: uppercase;
 }
 
@@ -23,14 +19,25 @@
   font-weight: 100;
   font-size: 1.25rem;
   line-height: 1.25;
-  color: white  ;
-  padding-bottom: 50px;
+  color: black;
 }
 
 .topics {
   text-align: center;
-  padding: 125px 20% 50px 20%;
+  padding: 50px 20% 100px 20%;
   background: #fcfcfc;
+}
+
+.topics-summary {
+  border-top: solid 1px black;
+  border-bottom: solid 1px #d1d1d1;
+  font-family: Helvetica, sans-serif;
+  font-weight: 200;
+  font-size: 1.25rem;
+  line-height: 1.25;
+  color: black;
+  background: #fcfcfc;
+  padding: 50px;
 }
 
 .btn-topic {
@@ -44,4 +51,12 @@
   background: #e8e8e8;
   color: black;
   opacity: 0.9
+}
+
+#topics-list {
+  text-transform: lowercase;
+}
+
+.selected {
+  background: #b6e0c1;
 }
