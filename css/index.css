@@ -67,6 +67,8 @@ body {
   z-index: 2;
   text-align: left;
   padding-bottom: 75px;
+  padding-left: 20%;
+  padding-right: 20%;
   background: #fcfcfc;
 }
 
@@ -104,7 +106,7 @@ body {
   padding: 3px 20px;
   background: #e8e8e8;
   color: black;
-  opacity: 0.9
+  opacity: 0.9;
 }
 
 .btn-subject:hover {
@@ -133,11 +135,13 @@ body {
   padding-bottom: 50px;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 992px) {
   .subjects {
     text-align: center;
   }
 }
+
+@media (max-width: 775px) {}
 
 @media (max-width: 600px) {
 
@@ -159,6 +163,10 @@ body {
   }
 
   .subject-body {
+    font-size: 1rem;
+  }
+
+  .btn-subject {
     font-size: 1rem;
   }
 

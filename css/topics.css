@@ -1,6 +1,6 @@
 .topics-top {
   padding: 150px 20%;
-  /* background: #c5dfe6; */
+  background-image: linear-gradient(to right bottom, #99f0df, #baded7);
   text-align: center;
 }
 
@@ -23,13 +23,17 @@
 }
 
 .topics {
+  position: relative;
+  z-index: 2;
   text-align: center;
-  padding: 50px 20% 100px 20%;
+  padding: 50px 4% 0px 4%;
   background: #fcfcfc;
 }
 
 .topics-summary {
-  border-top: solid 1px black;
+  position: relative;
+  z-index: 2;
+  /* border-top: solid 1px black; */
   border-bottom: solid 1px #d1d1d1;
   font-family: Helvetica, sans-serif;
   font-weight: 200;
@@ -44,13 +48,28 @@
   margin-bottom: 50px;
   border: 0;
   font-family: "Courier";
-  font-size: 1.25rem;
+  font-size: 1.0rem;
   text-transform: uppercase;
   letter-spacing: 2px;
   padding: 3px 20px;
   background: #e8e8e8;
   color: black;
-  opacity: 0.9
+  opacity: 0.85;
+}
+
+.btn-topic:hover {
+  cursor: pointer;
+  background: #dedede;
+  transition: background 0.1s;
+}
+
+.topics-submit {
+  padding-top: 50px;
+  position: relative;
+  z-index: 2;
+  background: #fcfcfc;
+  border-top: solid 1px #d1d1d1;
+  border-bottom: solid 1px #d1d1d1;
 }
 
 #topics-list {
@@ -59,4 +78,10 @@
 
 .selected {
   background: #b6e0c1;
+}
+
+.selected:hover {
+  cursor: pointer;
+  background: #a1cfac;
+  transition: background 0.1s;
 }

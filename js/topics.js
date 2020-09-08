@@ -46,6 +46,8 @@ var selectedTopicsToString = function(topics) {
       string += "and " + topics[i] + ".";
     } else if (topics.length == 1) {
       string += topics[i] + ".";
+    } else if (topics.length == 2 && i == 0) {
+      string += topics[i] + " ";
     } else {
       string += topics[i] + ", "
     }
