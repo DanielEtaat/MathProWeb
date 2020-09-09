@@ -1,0 +1,42 @@
+{
+  "Algebra 1": [
+    "Add Integers (small numbers)",
+    "Add Integers (large numbers)",
+    "Subtract Integers (small numbers)",
+    "Subtract Integers (large numbers)",
+    "Multiply Integers (small numbers)",
+    "Multiply Integers (large numbers)",
+    "Divide Integers (small numbers)",
+    "Divide Integers (large numbers)",
+    "Order of Operations with Integers",
+    "Order of Operations",
+    "Order of Operations with Rational Numbers",
+    "Add Rational Numbers",
+    "Subtract Rational Numbers",
+    "Multiply Rational Numbers",
+    "Divide Rational Numbers",
+    "Square Roots",
+    "Cube Roots",
+    "Equivalent Ratios",
+    "Proportions",
+    "Finding the midpoint between two points",
+    "Finding the endpoint",
+    "Finding the distance between two points"
+  ],
+  "Algebra 2" : [
+    "Adding and Subtracting Complex Numbers",
+    "Adding and Subtracting Complex Numbers with Rational Numbers",
+    "Finding the Complex Conjugate",
+    "Multiplying Complex Numbers",
+    "Dividing Complex Numbers",
+    "Absolute Value of Complex Numbers",
+    "Powers of i",
+    "Solve quadratics using the quadratic formula",
+    "Find the discriminant",
+    "Solve quadratics by factoring",
+    "Write a quadratic equation from roots",
+  ],
+  "Pre-Calculus": [
+    "Radian to Degree Conversion", "Degree to Radian Conversion", "Finding Reference Angles in Radians", "Finding Reference Angles in Degrees", "Finding Coterminal Angles in Radians", "Finding Coterminal Angles in Degrees", "Finding ratios of trigonometric functions (in radians)", "Finding ratios of trigonometric functions (in degrees)", "Finding inverses of trigonometric functions (in radians)", "Finding inverses of trigonometric functions (in degrees)"
+  ]
+}

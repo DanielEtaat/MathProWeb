@@ -107,6 +107,7 @@ body {
   background: #e8e8e8;
   color: black;
   opacity: 0.9;
+  width: 100%;
 }
 
 .btn-subject:hover {
