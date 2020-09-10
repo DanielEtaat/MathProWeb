@@ -2,10 +2,21 @@ body {
   background-image: linear-gradient(to right bottom, #4f58d1, #5478bf, #89bdc9);
 }
 
+.nav-left {
+  z-index: 10;
+}
+
+.nav-right {
+  z-index: 10;
+}
+
 .topics-top {
   padding: 150px 20%;
-  /* background-image: linear-gradient(to right bottom, #4f58d1, #5478bf, #89bdc9); */
+  background: #fcfcfc;
+  margin: 60px 60px 0 60px;
   text-align: center;
+  position: relative;
+  z-index: 2;
 }
 
 .topics-header {
@@ -27,11 +38,12 @@ body {
 }
 
 .topics {
-  margin: 0 2% 0 2%;
+  border-top: solid 1px #d1d1d1;
+  margin: 0 60px 0 60px;
   position: relative;
   z-index: 2;
   text-align: center;
-  padding: 50px 3% 0px 3%;
+  padding: 50px 3% 35px 3%;
   background: #fcfcfc;
 }
 
@@ -50,16 +62,17 @@ body {
 
 .btn-topic {
   text-align: left;
-  margin-bottom: 50px;
+  margin-bottom: 40px;
   border: 0;
   font-family: "Courier", "sans-serif";
-  font-size: 1.0rem;
+  font-size: 0.9rem;
   padding: 5px 12px;
   background: #e8e8e8;
   color: black;
   opacity: 0.85;
   width: 100%;
-  height: 70%;
+  height: 75%;
+  line-height: 20px;
 }
 
 .btn-topic:hover {
@@ -75,7 +88,7 @@ body {
   border-color: black;
   font-family: "Courier", "sans-serif";
   font-size: 1.0rem;
-  padding: 5px 12px;
+  padding: 0px 20px;
   background: transparent;
   color: black;
   opacity: 0.85;
@@ -91,7 +104,7 @@ body {
 }
 
 .topics-submit {
-  margin: 0 2% 0 2%;
+  margin: 0 60px 0 60px;
   padding-top: 25px;
   position: relative;
   z-index: 2;
@@ -114,11 +127,26 @@ body {
   transition: background 0.1s;
 }
 
-@media (max-width: 400px) {
+@media (max-width: 600px) {
   .topics-header {
-    font-size: 2.25rem;
+    font-size: 2rem;
   }
   .topics-body {
     font-size: 1rem;
+  }
+}
+
+@media (max-width: 450px) {
+  .topics-top {
+    padding: 150px 5%;
+  }
+  .topics-header {
+    font-size: 1.75rem;
+  }
+  .topics-body {
+    font-size: 0.75rem;
+  }
+  .btn-topic {
+    font-size: 0.75rem;
   }
 }

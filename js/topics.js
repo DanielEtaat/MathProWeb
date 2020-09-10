@@ -42,9 +42,10 @@ var addTopics = function() {
     var topicNode = document.createElement("div");
     var buttonNode = document.createElement("button");
     var t = topics[i];
+    topicNode.classList.add("col-lg-3");
+    topicNode.classList.add("col-md-4");
+    topicNode.classList.add("col-sm-6");
     topicNode.classList.add("col-12");
-    topicNode.classList.add("col-lg-4");
-    topicNode.classList.add("col-md-6");
     buttonNode.classList.add("btn-topic");
     buttonNode.id = topics[i];
     buttonNode.onclick = createSelectTopic(topics[i]);
