@@ -1,5 +1,5 @@
 body {
-  background-image: linear-gradient(to right bottom, #4f58d1, #5478bf, #89bdc9);
+  background-image: linear-gradient(to bottom, #4f58d1, #5478bf, #89bdc9);
 }
 
 .nav-left {
@@ -134,11 +134,20 @@ body {
   .topics-body {
     font-size: 1rem;
   }
+  .topics-top {
+    margin: 60px 30px 0 30px;
+  }
+  .topics {
+    margin: 0 30px 0 30px;
+  }
+  .topics-submit {
+    margin: 0 30px 0 30px;
+  }
 }
 
 @media (max-width: 450px) {
   .topics-top {
-    padding: 150px 5%;
+    padding: 100px 5%;
   }
   .topics-header {
     font-size: 1.75rem;
