@@ -72,8 +72,8 @@ var selectTopic = function(element) {
     element.classList.add('selected');
     selectedTopics.push(topic);
   }
-  var e = document.getElementById('topics-list');
-  e.innerText = selectedTopicsToString(selectedTopics);
+  // var e = document.getElementById('topics-list');
+  // e.innerText = selectedTopicsToString(selectedTopics);
 };
 
 var selectedTopicsToString = function(topics) {
