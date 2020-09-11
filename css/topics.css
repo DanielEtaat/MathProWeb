@@ -1,17 +1,23 @@
 body {
   background-image: linear-gradient(to bottom, #4f58d1, #5478bf, #89bdc9);
+  height: 100vh;
 }
 
 .nav-left {
+  top: 70px;
+  left: 80px;
   z-index: 10;
 }
 
 .nav-right {
+  top: 70px;
+  right: 80px;
   z-index: 10;
 }
 
 .topics-top {
-  padding: 150px 20%;
+  padding: 120px 20%;
+  padding-bottom: 100px;
   background: #fcfcfc;
   margin: 60px 60px 0 60px;
   text-align: center;
@@ -43,22 +49,9 @@ body {
   position: relative;
   z-index: 2;
   text-align: center;
-  padding: 50px 3% 35px 3%;
+  padding: 25px 3% 0px 3%;
   background: #fcfcfc;
 }
-
-/* .topics-summary {
-  position: relative;
-  z-index: 2;
-  border-bottom: solid 1px #d1d1d1;
-  font-family: Helvetica, sans-serif;
-  font-weight: 200;
-  font-size: 1.25rem;
-  line-height: 1.25;
-  color: black;
-  background: #fcfcfc;
-  padding: 50px;
-} */
 
 .btn-topic {
   text-align: left;
@@ -143,11 +136,18 @@ body {
   .topics-submit {
     margin: 0 30px 0 30px;
   }
+  .nav-left {
+    left: 50px;
+  }
+  .nav-right {
+    right: 50px;
+  }
 }
 
 @media (max-width: 450px) {
   .topics-top {
     padding: 100px 5%;
+    padding-bottom: 80px;
   }
   .topics-header {
     font-size: 1.75rem;
