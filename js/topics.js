@@ -95,6 +95,6 @@ var selectedTopicsToString = function(topics) {
 
 
 var submitTopics = function() {
-    url = "/submit.html?topics=" + selectedTopics.join(";");
+    url = "/MathProgramWebsite/submit.html?topics=" + selectedTopics.join(";");
     window.location.href = url;
 }
