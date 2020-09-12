@@ -1,6 +1,10 @@
+html {
+  background: #4f58d1;
+}
+
 body {
-  background-image: linear-gradient(to bottom, #4f58d1, #5478bf, #89bdc9);
-  height: 100vh;
+  background-image: linear-gradient(to bottom, #4f58d1, #5478bf, #5478bf);
+  height: 100%;
 }
 
 .nav-left {
@@ -118,6 +122,11 @@ body {
   cursor: pointer;
   background: #b6e0c1;
   transition: background 0.1s;
+}
+
+.bottom {
+  height: 200px;
+  background-image: linear-gradient(to bottom, #5478bf, #4f58d1);
 }
 
 @media (max-width: 600px) {
