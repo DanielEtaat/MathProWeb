@@ -112,6 +112,11 @@ body {
 .footer {
   background: none;
   padding-bottom: 60px;
+  color: white;
+}
+
+.footer > div > a {
+  color: white;
 }
 
 .selected {

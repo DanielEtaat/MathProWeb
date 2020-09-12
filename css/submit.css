@@ -1,0 +1,38 @@
+.topics-element {
+  font-family: Helvetica, sans-serif;
+  font-size: 1.25rem;
+  font-weight: 100;
+}
+
+.topics-element > li {
+  text-align: left;
+  padding: 10px 0;
+}
+
+.topics-element > li > input {
+  font-family: Helvetica, sans-serif;
+  font-size: 1.2rem;
+  font-weight: 100;
+  margin: 5px 0;
+  padding: 5px;
+  border-radius: 0;
+  border: 1px solid black;
+}
+
+@media (max-width: 600px) {
+  .topics-element {
+    font-size: 1rem;
+  }
+  .topics-element > li > input {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .topics-element {
+    font-size: 0.75rem;
+  }
+  .topics-element > li > input {
+    font-size: 0.75rem;
+  }
+}

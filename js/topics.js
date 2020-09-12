@@ -92,3 +92,9 @@ var selectedTopicsToString = function(topics) {
   }
   return string;
 };
+
+
+var submitTopics = function() {
+    url = "/submit.html?topics=" + selectedTopics.join(";");
+    window.location.href = url;
+}
