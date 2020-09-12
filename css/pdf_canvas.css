@@ -1,0 +1,12 @@
+/*
+#question_block {background-color: #0324fc;}
+#answer_block {background-color: #e31ecc;}
+.page {background-color: #20e6df;}
+*/
+
+@media print {
+    .pagebreak {
+        clear: both;
+        page-break-after: always;
+    }
+}

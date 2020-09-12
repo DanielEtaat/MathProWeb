@@ -14,7 +14,7 @@ firebase.initializeApp(firebaseConfig);
 firebase.analytics();
 var db = firebase.firestore();
 
-function getQuestions(topic, start, stop, questionList, answerList, instructionList) {
+function getQuestions(topic, start, stop, questionList, answerList, instructionList, lastOne) {
   var questions = [];
   var answers = [];
   db.collection(topic).where("number", ">=", start)
@@ -29,7 +29,7 @@ function getQuestions(topic, start, stop, questionList, answerList, instructionL
   })
   .then(function() {
     questionList.push(questions);
-    answerList.push(questions);
+    answerList.push(answers);
   })
 
   db.collection(topic).where("data", "==", "YES")
@@ -38,6 +38,17 @@ function getQuestions(topic, start, stop, questionList, answerList, instructionL
       querySnapshot.forEach(function(doc) {
           instructionList.push(doc.data()["instructions"]);
       })
+  })
+  .then(function() {
+    console.log(lastOne);
+    if (lastOne) {
+      var url = "/pdf_canvas.html?";
+      url += "questionList=" + questionList.join(";");
+      url += "&answerList=" + answerList.join(";");
+      url += "&instructionList=" + instructionList.join(";");
+      url += "&topicList=" + topicList.join(";");
+      window.location.href = url;
+    }
   })
 }
 

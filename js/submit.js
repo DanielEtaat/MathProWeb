@@ -47,10 +47,14 @@ var topicList = [];
 
 var submitGenerate = function() {
   var topic, numQuestions;
+  var lastOne = false;
   for (var i = 0; i < topics.length; i++) {
+    if (i == topics.length-1) {
+      lastOne = true;
+    }
     topic = topics[i];
     numQuestions = parseInt(document.getElementById(topics[i]+"input").value);
-    getQuestions(topic, 1, numQuestions, questionList, answerList, instructionList);
+    getQuestions(topic, 1, numQuestions, questionList, answerList, instructionList, lastOne);
     topicList.push(topic);
   }
 }

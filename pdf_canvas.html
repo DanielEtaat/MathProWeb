@@ -1,0 +1,94 @@
+<html>
+	<head>
+		<title>Testing web PDF generator</title>
+		<link rel="stylesheet" type="text/css" href="css/pdf_canvas.css">
+
+	</head>
+
+	<body>
+
+
+		<div id = "pdf">
+
+
+			<div id = "info block" style = "height:15%;">
+
+				<div id = "project and question info" style = "float:left;width:50%;">
+					<p style="line-height:16px">Project Name</p>
+					<p style="line-height:16px">Question</p>
+					<p style="line-height:16px" id = "topic names">Topic Name(s)</p>
+				</div>
+
+				<div style = "float:left;width:50%;">
+
+					<p style="line-height:16px">Name:_________________________________</p>
+					<p style="line-height:16px">Date:_________________________________</p>
+				</div>
+
+			</div>
+
+			<!--Dump all the questions here-->
+			<div id = "question_block">
+
+				<p id = "question_instruction0" style = "text-align: left;"></p>
+
+				<div class = "page" style = "height:85%;">
+					<div id = "lqb0" style = "float:left; width:50%;">
+					</div>
+
+					<div id = "rqb0" style = "float:right; width:50%;">
+					</div>
+
+					<div class="pagebreak"> </div>
+				</div>
+
+			</div>
+
+			<div class="pagebreak"> </div>
+
+			<!--Dump all the answers here-->
+			<div id = "answer_block">
+				<h2 style = "text-align: center;">Answers</h2>
+
+				<div class = "page">
+					<div id = "lab0" style = "float:left;width:50%;">
+					</div>
+					<div id = "rab0" style = "float:left;width:50%;">
+					</div>
+
+					<div class="pagebreak"> </div>
+				</div>
+
+			</div>
+
+		</div>
+
+		<button onclick = "genPDF('Add Integers (small numbers)')">Click Me!</button>
+		<button onclick = "cutFat();">Reduce Me!</button>
+		<button onclick = "dynamicMathJax();">Refresh Me!</button>
+
+
+		<!--Firebase-->
+		<script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-app.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-firestore.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-analytics.js"></script>
+
+
+		<script src="/__/firebase/7.18.0/firebase-app.js"></script>
+		<script src="/__/firebase/7.18.0/firebase-analytics.js"></script>
+		<script src="/__/firebase/7.18.0/firebase-auth.js"></script>
+		<script src="/__/firebase/7.18.0/firebase-firestore.js"></script>
+		<script src="/__/firebase/7.18.0/firebase-database.js"></script>
+
+		<!-- Initialize Firebase -->
+		<script src="/__/firebase/init.js"></script>
+
+		<script src="js/firebase.js"></script>
+		<script type="text/javascript" src="js/pdf_helpers.js"></script>
+		<script type="text/javascript" src="js/pdf_canvas.js"></script>
+
+
+
+
+	</body>
+</html>
