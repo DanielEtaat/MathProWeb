@@ -80,56 +80,7 @@ function getInstructions(querySnapshot){
     return instructions
 }
 
-/*
-function genPDF(question_generator_name){
-	var question_selection = ["Add Integers (small numbers)", "Subtract Integers (small numbers)"];
-	//counters and limits
-	var blockCounter_q = 0;
-	var blockCounter_a = 0;
-	var count_q = 0; //once count goes over the limit, make a new page and reset the count
-	var count_a = 0;
-	//[0] displacement, [1] displacement factor
-	var displacement_q = [0, 14];
-	var displacement_a = [0, 16];
-	//[0] leftLim, [1] rightLim
-	var lim_q = [7, 14];
-	var lim_a = [8, 16];
-	//dump each requested question
-	var package = [blockCounter_q, blockCounter_a, count_q, count_a, displacement_q, displacement_a, lim_q, lim_a];
-	console.log("here");
-	//for(i = 0; i < question_selection.length; i++){
-	for(var i = 0; i < 1; i++){
-		console.log("i: " + i);
-		var question_generator_name = question_selection[i];
-		console.log(question_generator_name);
-		//get the instruction names
-		var instructions = "";
-		db.collection(question_generator_name).where("data", "==", "YES")
-		.get()
-		.then(function(querySnapshot) {
-		    instructions = getInstructions(querySnapshot);
-			})
-		.catch(function(error) {
-		    console.log("Error getting documents: ", error);
-			});
-		console.log("i  --" + i);
-		//dump questions
-		var instruction_block = document.getElementById("question_instruction" + i);
-		db.collection(question_generator_name).where("number", ">", 0)
-		.get()
-		.then(function(querySnapshot) {
-			console.log("suddenly i " + i);
-			console.log("question_instruction" + i);
-			instruction_block.innerHTML = instructions;
-			console.log("all my dreams");
-			package = databaseCollectionToHTMLPage(querySnapshot, package);
-		    })
-		.catch(function(error) {
-		    console.log("Error getting documents: ", error);
-			});
-	}
-}
-*/
+
 
 function genPDF(question_names, question_instructions, question_problems, question_answers){
 
@@ -164,7 +115,7 @@ function genPDF(question_names, question_instructions, question_problems, questi
 	console.log("message: ", message);
 
 	var topic_name_p = document.getElementById("topic names");
-	topic_name_p.innerHTML = message;
+	//topic_name_p.innerHTML = message;
 
 	for(i = 0; i < question_names.length; i++){
 		console.log(question_names.length);
