@@ -31,6 +31,10 @@ function dumpElement(blockIdentifier, questionNumber, data){
 
 }
 
+function dumpInstruction(blockIdentifier, instruction){
+	document.getElementById(blockIdentifier).innerHTML += `<p style= "float:left; left:0%;">` + instruction + `</p> <br><br><br>`;
+}
+
 function createBlocksForNewPage(flag, blockCounter, textType){
 	//add blocks to this new page
 	var block;
@@ -70,26 +74,27 @@ function manageTextDump(blockCounter, displacement, count, lim, data, textType){
 
 	if (count < lim[0]){
 		//dump to the left blocks
-    if (flag == "bomb"){
+		var blockName = "l" + flag + "b" + blockCounter;
 
-    }
-    else{
-		    var blockName = "l" + flag + "b" + blockCounter;
-		    var question_number = count + displacement[0] + 1;
-    	  dumpElement( blockName, question_number, data);
-        }
+	    if (flag == "bomb"){
+	    	dumpInstruction(blockName, data);
+	    }
+	    else{
+			var question_number = count + displacement[0] + 1;
+			dumpElement(blockName, question_number, data);
+	        }
     }
     else if (count < lim[1]){
     	//dump to the right blocks
-      if (flag == "bomb"){
+    	var blockName = "r" + flag + "b" + blockCounter;
 
-      }
-      else{
-        var blockName = "r" + flag + "b" + blockCounter;
-      	var question_number = count + displacement[0] + 1;
-      	dumpElement( blockName, question_number, data);
-
-        }
+		if (flag == "bomb"){
+			dumpInstruction(blockName, data);
+		}
+		else{
+			var question_number = count + displacement[0] + 1;
+			dumpElement( blockName, question_number, data);
+		}
 
     	}
     else if (count >= lim[1]){
@@ -106,8 +111,6 @@ function manageTextDump(blockCounter, displacement, count, lim, data, textType){
     	displacement[1] = 16;
 
 		createBlocksForNewPage(flag, blockCounter, textType);
-
-    //does not put the question that was supposed to be here inside
 
     }
 
@@ -163,8 +166,14 @@ function databaseCollectionToHTMLPage(problems, answers, instruction, instructio
     */
 
     //update instructions
-    manageTextDump(blockCounter_q, displacement_q, count_q, lim_q, _____);
-    count_q += 1;
+    var lil = [];
+    lil = manageTextDump(blockCounter_q, displacement_q, count_q, lim_q, instruction, "instruction");
+
+	blockCounter_q = lil[0];
+	displacement_q = lil[1];
+	count_q = lil[2];
+	lim_q = lil[3];
+
 
     //add to the counter because of the instruction's space
 
@@ -172,8 +181,7 @@ function databaseCollectionToHTMLPage(problems, answers, instruction, instructio
     	//doc represents the single problem data from firebase
     	//put the doc's data to the html page
 
-		var lil = [];
-
+		//problems[i] is a single problem
 		lil = manageTextDump(blockCounter_q, displacement_q, count_q, lim_q, problems[i], "problem");
 		//update changes to variables
 		blockCounter_q = lil[0];
