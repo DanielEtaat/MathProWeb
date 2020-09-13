@@ -42,7 +42,7 @@ function getQuestions(topic, start, stop, questionList, answerList, instructionL
   .then(function() {
     console.log(lastOne);
     if (lastOne) {
-      var url = "/pdf_canvas.html?";
+      var url = "/MathProgramWebsite/pdf.html?";
       url += "questionList=" + questionList.join(";");
       url += "&answerList=" + answerList.join(";");
       url += "&instructionList=" + instructionList.join(";");
