@@ -59,6 +59,8 @@ function createBlocksForNewPage(flag, blockCounter, textType){
 
 function manageTextDump(blockCounter, displacement, count, lim, data, textType){
 
+	console.log(textType + ":" + data);
+
 	//determines which block we are working with
 	var flag;
 	if (textType == "problem"){
@@ -67,19 +69,23 @@ function manageTextDump(blockCounter, displacement, count, lim, data, textType){
 	else if (textType == "answer"){
 		flag = "a";
 	}
-  else if (textType == "instruction"){
-    flag = "bomb";
-  }
+	else if (textType == "instruction"){
+		flag = "bomb";
+	}
 
 
 	if (count < lim[0]){
 		//dump to the left blocks
-		var blockName = "l" + flag + "b" + blockCounter;
+		
 
 	    if (flag == "bomb"){
+
+	    	var blockName = "lqb" + blockCounter;
+	    	console.log("blockName: " + blockName);
 	    	dumpInstruction(blockName, data);
 	    }
 	    else{
+	    	var blockName = "l" + flag + "b" + blockCounter;
 			var question_number = count + displacement[0] + 1;
 			dumpElement(blockName, question_number, data);
 	        }
@@ -89,6 +95,8 @@ function manageTextDump(blockCounter, displacement, count, lim, data, textType){
     	var blockName = "r" + flag + "b" + blockCounter;
 
 		if (flag == "bomb"){
+	    	var blockName = "rqb" + blockCounter;
+	    	console.log("blockName: " + blockName);
 			dumpInstruction(blockName, data);
 		}
 		else{
