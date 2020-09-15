@@ -156,6 +156,9 @@ body {
   .nav-right {
     right: 50px;
   }
+  .footer {
+    padding: 0 35px;
+  }
 }
 
 @media (max-width: 450px) {
