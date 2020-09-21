@@ -9,6 +9,10 @@ subjects["Algebra 2"] = ["Adding and Subtracting Complex Numbers", "Adding and S
 subjects["Pre-Calculus"] = ["Radian to Degree Conversion", "Degree to Radian Conversion", "Finding Reference Angles in Radians", "Finding Reference Angles in Degrees", "Finding Coterminal Angles in Radians", "Finding Coterminal Angles in Degrees", "Finding ratios of trigonometric functions (in radians)", "Finding ratios of trigonometric functions (in degrees)", "Finding inverses of trigonometric functions (in radians)", "Finding inverses of trigonometric functions (in degrees)"];
 
 
+/*
+Runs when the page topics.html loads.
+Stores data from the url paramaters and uses them to generate the topics and the subject displayed on the page.
+*/
 window.onload = function() {
   console.log('getting arguments.');
   var params = getParams(window.location.href);
@@ -18,6 +22,10 @@ window.onload = function() {
   addTopics();
 }
 
+/*
+Function found on stack overflow.
+Returns the paramaters from the url as a dictionary object.
+*/
 var getParams = function(url) {
 	var params = {};
 	var parser = document.createElement('a');
@@ -31,11 +39,19 @@ var getParams = function(url) {
 	return params;
 };
 
+/*
+Adds the subject header to the page based on the paramaters in the url.
+*/
 var addSubject = function() {
   var element = document.getElementById('subject');
   element.innerText = subject;
 };
 
+/*
+Adds all the topics to the page based on the paramaters in the url.
+It creates elements using document.createElement and appends them as children elements
+of the div element with id="topics".
+*/
 var addTopics = function() {
   var e = document.getElementById("topics");
   for (var i = 0; i < topics.length; i++) {
@@ -55,6 +71,12 @@ var addTopics = function() {
   }
 };
 
+/*
+Helper function for addTopics().
+This is a higher order function. It takes in an element id that corresponds to a topic on the page.
+It then creates a function that, when it is called, calls the function selectTopic on that element.
+It then returns this function.
+*/
 var createSelectTopic = function(id) {
   var callSelectTopic = function() {
     var element = document.getElementById(id);
@@ -63,7 +85,11 @@ var createSelectTopic = function(id) {
   return callSelectTopic;
 };
 
-
+/*
+This function, when called on an element, selects the topic associated with that element for the user.
+The function procedure includes adding the topic name to a list containing all selected topics and
+changing the color of the topic to green on the page.
+*/
 var selectTopic = function(element) {
   var topic = element.innerText;
   if (element.classList.contains('selected')) {
@@ -77,6 +103,10 @@ var selectTopic = function(element) {
   // e.innerText = selectedTopicsToString(selectedTopics);
 };
 
+/*
+OLD FUNCTION NOT USED ANYMORE,
+Returns a string including all the selected topics.
+*/
 var selectedTopicsToString = function(topics) {
   var string = '';
   for (var i = 0; i < topics.length; i++) {
@@ -93,7 +123,9 @@ var selectedTopicsToString = function(topics) {
   return string;
 };
 
-
+/*
+This function, when called, submits all the selected topics as data to the page submit.html.
+*/
 var submitTopics = function() {
     url = "/MathProgramWebsite/submit.html?topics=" + selectedTopics.join(";");
     window.location.href = url;

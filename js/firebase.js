@@ -14,6 +14,13 @@ firebase.initializeApp(firebaseConfig);
 firebase.analytics();
 var db = firebase.firestore();
 
+/*
+This function communicates with firebase.
+@param topic: a string which will be used to filter out questions from a specific topic in the database.
+@params start, stop: the range from which questions will be selected in the data base.
+@params questionList, answerList, instructionList: These lists will be filled with questions from the database.
+@param lastOne: if this is True, the function will submit all the data is has read from the database to pdf.html.
+*/
 function getQuestions(topic, start, stop, questionList, answerList, instructionList, lastOne) {
   var questions = [];
   var answers = [];

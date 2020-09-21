@@ -1,3 +1,6 @@
+/*
+Same as the function in topics.js
+*/
 var getParams = function(url) {
 	var params = {};
 	var parser = document.createElement('a');
@@ -11,6 +14,12 @@ var getParams = function(url) {
 	return params;
 };
 
+/*
+Runs whenever the page loads.
+It gets the data from the url paramaters and splits it into seperate lists.
+These lists are then used to generate the pdf.
+Finally, the funciton dynamicMathJax() is used to convert the latex expressions on the page to actual math expressions viewed by the user.
+*/
 var questionList, answerList, instructionList, topicList;
 window.onload = function() {
 	var params = getParams(window.location.href);
@@ -22,6 +31,9 @@ window.onload = function() {
   dynamicMathJax();
 }
 
+/*
+Helper function for window.load(). This function seperates the data from the url params into lists.
+*/
 var splitStrings = function(strings) {
 	var splitCollection = [];
 	for (var i = 0; i < strings.length; i++) {
@@ -30,6 +42,12 @@ var splitStrings = function(strings) {
 	return splitCollection;
 }
 
+/*
+This function handles the main part of the web page generation, it generates the PDF!
+It loops through the questionList gathered from the url and generates elements that contain the questions on the page.
+These elements are place in divs with the class question-row.
+In summary, it adds questions (along with the associated instructions and answers to the page.)
+*/
 var generatePDF = function() {
 
   // Adding Questions to the PDF
@@ -142,6 +160,8 @@ var generatePDF = function() {
   }
 
 }
+
+
 
 function dynamicMathJax() {
 	var script = document.createElement("script");
