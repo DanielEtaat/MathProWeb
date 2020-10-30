@@ -25,7 +25,7 @@ window.onload = function() {
 var splitStrings = function(strings) {
 	var splitCollection = [];
 	for (var i = 0; i < strings.length; i++) {
-		splitCollection.push(strings[i].split(","));
+		splitCollection.push(strings[i].split("@"));
 	}
 	return splitCollection;
 }
