@@ -50,6 +50,10 @@ function getQuestions(topic, start, stop, questionList, answerList, instructionL
     console.log(lastOne);
     if (lastOne) {
       var url = "/MathProgramWebsite/pdf.html?";
+      for (var i = 0; i < questionList.length; i++) {
+        questionList[i] = questionList[i].join("@");
+        answerList[i] = answerList[i].join("@");
+      }
       url += "questionList=" + questionList.join(";");
       url += "&answerList=" + answerList.join(";");
       url += "&instructionList=" + instructionList.join(";");

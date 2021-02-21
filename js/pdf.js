@@ -37,7 +37,7 @@ Helper function for window.load(). This function seperates the data from the url
 var splitStrings = function(strings) {
 	var splitCollection = [];
 	for (var i = 0; i < strings.length; i++) {
-		splitCollection.push(strings[i].split(","));
+		splitCollection.push(strings[i].split("@"));
 	}
 	return splitCollection;
 }
