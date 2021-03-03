@@ -189,7 +189,7 @@ function loadImage(imageJson) {
 
 function loadGraph(imageJson) {
 	/* Uses the Desmos API to plot a graph based on the given json instructions. */
-
+	console.log(imageJson);
 	let calculator = Desmos.GraphingCalculator();
 	calculator.updateSettings(imageJson.updateSettings);
 
