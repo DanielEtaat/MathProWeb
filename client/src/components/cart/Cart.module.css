@@ -1,0 +1,54 @@
+.cartWrapper {
+  display: grid;
+  grid-row-gap: 5px;
+
+  background-color: white;
+  width: 300px;
+  max-height: 500px;
+  overflow-y: scroll;
+  padding: 15px;
+  box-shadow: 3px 3px 9px #888;
+}
+
+.cartHeader {
+  background-color: #91ccf1;
+  min-height: 30px;
+  padding: 10px;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.subjectGrid {
+  display: grid;
+  grid-row-gap: 5px;
+  grid-template-columns: 1fr 8fr;
+}
+
+.subjectRow {
+  grid-column: 1 / 8;
+  background-color: #91ccf1;
+  min-height: 30px;
+  padding: 10px;
+  font-weight: bold;
+  font-size: medium;
+}
+
+.subTopicRow {
+  grid-column: 2 / 8;
+  display: grid;
+  grid-template-columns: 12fr 1fr;
+  grid-template-rows: 1fr;
+
+  background-color: #c5e4f8;
+  padding: 8px 8px 8px 15px;
+  font-weight: bold;
+  font-size: small;
+}
+
+.crossOut {
+  padding-left: 5px;
+  width: 5px;
+  border: 0px;
+  background: transparent;
+  cursor: pointer;
+}

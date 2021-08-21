@@ -1,0 +1,2 @@
+export const ADD_SUBTOPIC = "ADD_SUBTOPIC";
+export const REMOVE_SUBTOPIC = "REMOVE_SUBTOPIC";

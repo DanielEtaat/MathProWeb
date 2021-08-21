@@ -1,0 +1,153 @@
+.button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+.button:hover {
+  cursor: pointer;
+}
+
+.aboutUsButton {
+  font-size: 1.5rem;
+  margin-left: 48%;
+  color: white;
+}
+
+.aboutUsButton:hover {
+  color: #ccc;
+}
+
+/* The Modal (background) */
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* The Modal (content) */
+.modalContent {
+  position: relative;
+  width: 85%;
+  height: 85%;
+  padding: 1rem 2rem;
+  background-color: white;
+  color: #264653;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 700px) {
+  .modalContent {
+    flex-direction: column-reverse;
+    justify-content: center;
+  }
+}
+
+.aboutUsText {
+  padding-top: 1rem;
+}
+
+.aboutUsTextContainer {
+  padding-right: 1rem;
+}
+
+.aboutUsProfiles {
+  justify-self: flex-end;
+}
+
+@media screen and (max-width: 700px) {
+  .aboutUsTextContainer {
+    padding-top: 1rem;
+  }
+}
+
+.profilesGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  gap: 10px;
+  max-height: 47vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.profileItem {
+  width: 12vw;
+  height: 12vw;
+  background-color: #ffd26d;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.profileItem:hover {
+  background-color: #1b4965;
+  transition: background-color 100ms ease-in;
+}
+
+.profileItem:hover :is(.profileTextContainer, .profileLink) {
+  color: white;
+}
+
+.profileTextContainer {
+  color: black;
+  text-align: center;
+}
+
+.profileName {
+  font-size: 1.35vw;
+  font-weight: 800;
+}
+
+.profileTitle {
+  font-size: 1.2vw;
+  font-weight: 400;
+}
+
+.profileLink {
+  color: black;
+  font-size: 2rem;
+}
+
+@media screen and (max-width: 700px) {
+  .profilesGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .profileItem {
+    width: 32vw;
+    height: 32vw;
+  }
+
+  .profileName {
+    font-size: 3vw;
+    font-weight: 800;
+  }
+
+  .profileTitle {
+    font-size: 2.5vw;
+    font-weight: 400;
+  }
+}
+
+.closeButton {
+  position: absolute;
+  font-size: 2.8rem;
+  padding-right: 1rem;
+  color: #264653;
+  top: 0;
+  right: 0;
+}
+
+.closeButton:hover {
+  color: red;
+}
