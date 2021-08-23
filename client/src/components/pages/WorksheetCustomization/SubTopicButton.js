@@ -5,23 +5,31 @@ import PropTypes from "prop-types";
 import CartContext from "../../../context/Cart/CartContext";
 import { subTopicBtn, subTopicSelected } from "./Button.module.css";
 
-const SubTopicButton = ({ subTopic }) => {
+const SubTopicButton = ({ topic, subTopic }) => {
   /* determines 1) if a subtopic button has been pressed, and
 	   equivalently 2) if the subtopic appears in the shopping cart
 	*/
-  const { topicCart, removeSubTopic, addSubTopic } = useContext(CartContext);
+  const { topicCart, addSubTopic, removeSubTopic } = useContext(CartContext);
   const { subjectName } = useParams();
 
-  const containsSubtopic = () =>
-    topicCart[subjectName] && topicCart[subjectName].indexOf(subTopic) !== -1;
+  const containsSubtopic = () => {
+    for (let i = 0; i < topicCart.length; i++) {
+      const request = topicCart[i];
+      if (request.topic === topic
+              && request.subtopic === subTopic) {
+        return true;
+      }
+    }
+    return false;
+  };
 
   return (
     <button
       className={containsSubtopic() ? subTopicSelected : subTopicBtn}
       onClick={
         containsSubtopic()
-          ? () => removeSubTopic(subjectName, subTopic)
-          : () => addSubTopic(subjectName, subTopic)
+          ? () => removeSubTopic(subjectName, topic, subTopic)
+          : () => addSubTopic(subjectName, topic, subTopic)
       }
     >
       {subTopic}
