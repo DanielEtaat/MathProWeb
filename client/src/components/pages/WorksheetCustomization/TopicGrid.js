@@ -55,7 +55,7 @@ const TopicGrid = ({ topicsMap }) => {
           key={topic}
           className={topic === selectedTopic ? subtopics : hidden}
         >
-          <SubTopicGrid subTopics={topicsMap[topic]} />
+          <SubTopicGrid topic={topic} subTopics={topicsMap[topic]} />
         </div>
       ))
     );

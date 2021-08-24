@@ -1,26 +1,31 @@
 import { ADD_SUBTOPIC, REMOVE_SUBTOPIC } from "../types";
 
 const CartReducer = (state, action) => {
-  const [subject, subtopic] = action.payload;
+  const [subject, topic, subtopic] = action.payload;
 
-  const cartUpdate = {
-    [subject]: state[subject] ? state[subject].slice() : [],
-  };
+  const newState = [...state];
 
   switch (action.type) {
+
     case ADD_SUBTOPIC:
-      cartUpdate[subject].push(subtopic);
-      return {
-        ...state,
-        ...cartUpdate,
-      };
+      newState.push({
+        subject: subject,
+        topic: topic,
+        subtopic: subtopic
+      });
+      return newState;
+
     case REMOVE_SUBTOPIC:
-      const i = cartUpdate[subject].indexOf(subtopic);
-      cartUpdate[subject].splice(i, 1);
-      return {
-        ...state,
-        ...cartUpdate,
-      };
+      for (let i = 0; i < newState.length; i++) {
+        const request = newState[i];
+        if (request.subject === subject 
+            && request.topic === topic
+            && request.subtopic === subtopic) {
+          newState.splice(i, 1);
+          return newState;
+        }
+      }
+      return state;
     default:
       return state;
   }
