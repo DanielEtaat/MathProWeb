@@ -17,6 +17,7 @@ const OrderTopics = () => {
   const { topicCart } = useContext(CartContext);
 
   const subjectQuestions = [];
+  const subjectSet = new Set();
 
   const onDragEnd = (result) => {
     const { destination, source, draggableId } = result;
@@ -29,32 +30,49 @@ const OrderTopics = () => {
       return;
     }
 
-    topicCart[source.droppableId].splice(source.index, 1);
-    topicCart[source.droppableId].splice(destination.index, 0, draggableId);
+    const [subject, topic, subtopic] = draggableId.split("-");
+    const draggedItem = { subject, topic, subtopic };
+    topicCart.splice(source.index, 1);
+    topicCart.splice(destination.index, 0, draggedItem);
   };
 
-  for (const subject in topicCart) {
-    topicCart[subject].length !== 0 &&
-      subjectQuestions.push(
-        <Fragment key={subject}>
-          <h1>{subject}</h1>
-          <p>Order Topics Below</p>
-          <Droppable droppableId={subject}>
-            {(provided) => (
-              <div
-                ref={provided.innerRef}
-                className={orderItemsContainer}
-                {...provided.droppableProps}
-              >
-                {topicCart[subject].map((topicStr, index) => (
-                  <OrderItem key={topicStr} topicStr={topicStr} index={index} />
-                ))}
-                {provided.placeholder}
-              </div>
-            )}
-          </Droppable>
-        </Fragment>
-      );
+  for (const topicItem of topicCart) {
+    subjectSet.add(topicItem.subject);
+  }
+
+  for (const currSubject of subjectSet) {
+    subjectQuestions.push(
+      <Fragment key={currSubject}>
+        <h1>{currSubject}</h1>
+        <p>Order Topics Below</p>
+        <Droppable droppableId={currSubject}>
+          {(provided) => (
+            <div
+              ref={provided.innerRef}
+              className={orderItemsContainer}
+              {...provided.droppableProps}
+            >
+              {topicCart
+                .filter((topicItem) => currSubject === topicItem.subject)
+                .map((topicItem, index) => {
+                  const { subject, topic, subtopic } = topicItem;
+
+                  return (
+                    <OrderItem
+                      key={subtopic}
+                      subject={subject}
+                      topic={topic}
+                      subtopic={subtopic}
+                      index={index}
+                    />
+                  );
+                })}
+              {provided.placeholder}
+            </div>
+          )}
+        </Droppable>
+      </Fragment>
+    );
   }
 
   return (
