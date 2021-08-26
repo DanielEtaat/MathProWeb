@@ -21,7 +21,9 @@ const OrderItem = ({ subject, topic, subtopic, index }) => {
     const checkedVal =
       value === ""
         ? value
-        : Math.max(Number(min), Math.min(Number(max), Number(value)));
+        : Math.floor(
+            Math.max(Number(min), Math.min(Number(max), Number(value)))
+          );
 
     setQuestionCount(checkedVal);
   };
