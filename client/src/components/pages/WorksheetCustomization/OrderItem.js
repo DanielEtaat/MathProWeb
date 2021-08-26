@@ -11,7 +11,7 @@ import {
   hidden,
 } from "./OrderTopics.module.css";
 
-const OrderItem = ({ topicStr, index }) => {
+const OrderItem = ({ subject, topic, subtopic, index }) => {
   const min = 1;
   const max = 100;
   const [questionCount, setQuestionCount] = useState(10);
@@ -35,7 +35,7 @@ const OrderItem = ({ topicStr, index }) => {
   };
 
   return (
-    <Draggable draggableId={topicStr} index={index}>
+    <Draggable draggableId={`${subject}-${topic}-${subtopic}`} index={index}>
       {(provided) => (
         <div
           ref={provided.innerRef}
@@ -44,7 +44,7 @@ const OrderItem = ({ topicStr, index }) => {
           {...provided.dragHandleProps}
         >
           <i className={`${grip} fas fa-grip-vertical`}></i>
-          <p>{topicStr}</p>
+          <p>{subtopic}</p>
           <div className={questionCountContainer}>
             <button
               className={`${countBtn} ${questionCount > min ? "" : hidden}`}
@@ -74,7 +74,9 @@ const OrderItem = ({ topicStr, index }) => {
 };
 
 OrderItem.propTypes = {
-  topicStr: PropTypes.string.isRequired,
+  subject: PropTypes.string.isRequired,
+  topic: PropTypes.string.isRequired,
+  subtopic: PropTypes.string.isRequired,
   index: PropTypes.number.isRequired,
 };
 
