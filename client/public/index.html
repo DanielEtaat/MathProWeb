@@ -9,13 +9,21 @@
       content="Generate your own custom Math worksheets!"
     />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <title>React App</title>
+
+    <script>
+      MathJax = { tex: { inlineMath: [["$", "$"]] } };
+    </script>
+    <script
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+    ></script>
+
+    <title>MathPro Website</title>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
   </body>
-
   <script
     src="https://kit.fontawesome.com/40a3f9690e.js"
     crossorigin="anonymous"

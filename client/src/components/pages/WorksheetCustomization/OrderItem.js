@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Draggable } from "react-beautiful-dnd";
 import PropTypes from "prop-types";
 
@@ -10,11 +10,21 @@ import {
   countBtn,
   hidden,
 } from "./OrderTopics.module.css";
+import CartContext from "../../../context/Cart/CartContext";
 
 const OrderItem = ({ subject, topic, subtopic, index }) => {
   const min = 1;
-  const max = 100;
-  const [questionCount, setQuestionCount] = useState(10);
+  const max = 10;
+  const { changeNumQuestions, getTopicItem } = useContext(CartContext);
+  const currTopicItem = getTopicItem(subject, topic, subtopic);
+  const [questionCount, setQuestionCount] = useState(
+    currTopicItem ? currTopicItem.numQuestions : 10
+  );
+
+  const updateQuestionCount = (count) => {
+    setQuestionCount(count);
+    changeNumQuestions(subject, topic, subtopic, count);
+  };
 
   const capCounter = (e) => {
     const { value } = e.target;
@@ -25,19 +35,22 @@ const OrderItem = ({ subject, topic, subtopic, index }) => {
             Math.max(Number(min), Math.min(Number(max), Number(value)))
           );
 
-    setQuestionCount(checkedVal);
+    updateQuestionCount(checkedVal);
   };
   const incrementCounter = () => {
     const increasedVal = questionCount + 1;
-    increasedVal <= max && setQuestionCount(increasedVal);
+    increasedVal <= max && updateQuestionCount(increasedVal);
   };
   const decrementCounter = () => {
     const decreasedVal = questionCount - 1;
-    decreasedVal >= min && setQuestionCount(decreasedVal);
+    decreasedVal >= min && updateQuestionCount(decreasedVal);
   };
 
   return (
-    <Draggable draggableId={`${subject}-${topic}-${subtopic}`} index={index}>
+    <Draggable
+      draggableId={`${subject}-${topic}-${subtopic}-${questionCount}`}
+      index={index}
+    >
       {(provided) => (
         <div
           ref={provided.innerRef}
