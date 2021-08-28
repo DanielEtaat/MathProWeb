@@ -18,21 +18,23 @@ const ShoppingCart = () => {
     /* Returns a block of HTML elements representing the shopping cart's
     items for a single subject and its selected subtopics. */
 
-    const subtopics = topicCart
+    const subjectSubset = topicCart
       .reduce((acc, curr) => {
         if (curr.subject === subject) {
-          return [...acc, curr.subtopic];
+          return [...acc, [curr.topic, curr.subtopic]];
         }
         return acc;
       }, []);
 
-    const subtopicElements = subtopics
-    .map((subtopic) => (
+    const subtopicElements = subjectSubset
+    .map(args => {
+      const [topic, subtopic] = args;
+      return (
       <div className={styles.subTopicRow} key={subtopic}>
         <div>{subtopic}</div>
-        <CrossOutBtn subject={subject} subtopic={subtopic}></CrossOutBtn>
-      </div>
-    ));
+        <CrossOutBtn subject={subject} topic={topic} subtopic={subtopic}></CrossOutBtn>
+      </div>)
+      });
 
     return (
       <div className={styles.subjectGrid} key={subject}>
