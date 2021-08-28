@@ -1,15 +1,4 @@
 const data = {
-  "Pre-Calculus": {},
-  "Algebra 1": {
-    "Sketching Lines": [
-      "Graph a line between two points and label the axis intercepts",
-    ],
-  },
-  Calculus: {
-    "Sketching Derivatives": [
-      "Find the graphed function's derivative and sketch it",
-    ],
-  },
   "Algebra 2": {
     "Sinusoidal Functions": [
       "Finding properties of sinusoidal functions from graphs",
@@ -28,13 +17,10 @@ const data = {
       "Find the roots of factored polynomials",
       "Evaluate polynomials using synthetic division",
     ],
-    "Geometric and Arithmetic Series": [],
-    "Direct and Inverse Relationships": [],
     "Absolute Value Equations": [
       "Graph an absolute value function",
       "Solve absolute value equations",
     ],
-    "Complex Numbers": [],
     "Quadratic Equations": [
       "Translate a parabola",
       "Graph quadratic functions in standard form",

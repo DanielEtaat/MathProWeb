@@ -1,0 +1,62 @@
+.pdf {
+  background: white;
+  grid-column: 2;
+  margin-top: 20px;
+  padding: 40px;
+  box-shadow: 5px 5px 5px 0px #bbb;
+  overflow: scroll;
+}
+
+.answers {
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
+.topicName {
+  font-family: times;
+  font-size: 2em;
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.directions {
+  font-family: times;
+  font-size: 20px;
+  padding-bottom: 20px;
+}
+
+.questionGrid {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  margin-left: 20px;
+}
+
+.prompt,
+.answer {
+  font-family: times;
+}
+
+.disp {
+  display: grid;
+  grid-template-columns: 35px auto;
+  padding-bottom: 20px;
+}
+
+.number {
+  grid-column: 1;
+  padding-right: 5px;
+  font-family: times;
+}
+
+.dispbody {
+  grid-column: 2;
+}
+
+.dispimage {
+  grid-column: 2;
+}
+
+.divider {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}

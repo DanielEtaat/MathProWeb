@@ -30,8 +30,13 @@ const OrderTopics = () => {
       return;
     }
 
-    const [subject, topic, subtopic] = draggableId.split("-");
-    const draggedItem = { subject, topic, subtopic };
+    const [subject, topic, subtopic, numQuestions] = draggableId.split("-");
+    const draggedItem = {
+      subject,
+      topic,
+      subtopic,
+      numQuestions: numQuestions !== "" ? parseInt(numQuestions) : 0,
+    };
     topicCart.splice(source.index, 1);
     topicCart.splice(destination.index, 0, draggedItem);
   };
@@ -85,10 +90,7 @@ const OrderTopics = () => {
           </Link>
         </div>
         <div className={buttonRight}>
-          <Link
-            to={`/custom/${subjectName}/final`}
-            onClick={(e) => e.preventDefault()}
-          >
+          <Link to={`/custom/${subjectName}/pdf`}>
             <button className={next}>Final Touch {">"}</button>
           </Link>
         </div>
