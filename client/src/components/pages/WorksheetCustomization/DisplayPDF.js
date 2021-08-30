@@ -23,13 +23,22 @@ const DisplayPDF = () => {
     jsonString && console.log("pdf downloading...");
 
     pdfContainer.current.style.overflow = "visible";
-    pdfContainer.current.style.height = `5000px`;
+    pdfContainer.current.style.height = `${
+      pdfContainer.current.scrollHeight * 1.5
+    }px`;
     html2canvas(pdfContainer.current).then((canvas) => {
       const imgData = canvas.toDataURL("image/png");
 
       // Generate PDF
       const doc = new jsPDF("p", "px", "a1");
-      doc.addImage(imgData, "PNG", 0, 0, 1080, 5000);
+      doc.addImage(
+        imgData,
+        "PNG",
+        0,
+        0,
+        1080,
+        pdfContainer.current.scrollHeight
+      );
       doc.save("worksheet.pdf");
     });
     pdfContainer.current.style.overflow = "scroll";
