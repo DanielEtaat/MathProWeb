@@ -3,6 +3,7 @@ import Desmos from "desmos";
 
 const PDFImage = ({ imageJson }) => {
   const [imgSrc, setImgSrc] = useState("");
+  const [hasImage] = useState(Object.keys(imageJson).length !== 0);
 
   useEffect(() => {
     if (imageJson.imageType === "Graph") {
@@ -15,7 +16,7 @@ const PDFImage = ({ imageJson }) => {
     }
   }, [imageJson]);
 
-  return <img alt="Question" src={imgSrc} />;
+  return hasImage && <img alt="Question" src={imgSrc} />;
 };
 
 export default PDFImage;
