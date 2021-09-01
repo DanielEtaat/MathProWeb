@@ -41,18 +41,16 @@ const AboutUsModal = () => {
             <div className={aboutUsTextContainer}>
               <h1>Our Team.</h1>
               <p className={aboutUsText}>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Pariatur eligendi, at dolorum unde molestias aperiam! Cupiditate
-                tenetur veritatis eos. Dolor alias dolorem deserunt vitae
-                aperiam saepe illo. Quisquam, eum illum.
+                With the help of this talented, motivated, and selfless team,
+                MathPro is made available for free for all users. 
               </p>
             </div>
             <div className={aboutUsProfiles}>
               <div className={profilesGrid}>
                 <div className={profileItem}>
                   <div className={profileTextContainer}>
-                    <h2 className={profileName}>Name Surname</h2>
-                    <h3 className={profileTitle}>Founder & CEO</h3>
+                    <h2 className={profileName}>Nima Rahmanian</h2>
+                    <h3 className={profileTitle}>Co-Founder</h3>
                   </div>
                   <Link to="/" className={profileLink}>
                     <i className="fab fa-linkedin"></i>
@@ -60,8 +58,8 @@ const AboutUsModal = () => {
                 </div>
                 <div className={profileItem}>
                   <div className={profileTextContainer}>
-                    <h2 className={profileName}>Name Surname</h2>
-                    <h3 className={profileTitle}>Founder & CEO</h3>
+                    <h2 className={profileName}>Daniel Etaat</h2>
+                    <h3 className={profileTitle}>Co-Founder</h3>
                   </div>
                   <Link to="/" className={profileLink}>
                     <i className="fab fa-linkedin"></i>
@@ -69,8 +67,8 @@ const AboutUsModal = () => {
                 </div>
                 <div className={profileItem}>
                   <div className={profileTextContainer}>
-                    <h2 className={profileName}>Name Surname</h2>
-                    <h3 className={profileTitle}>Founder & CEO</h3>
+                    <h2 className={profileName}>Gianni Gabriel</h2>
+                    <h3 className={profileTitle}>Lead Web Developer</h3>
                   </div>
                   <Link to="/" className={profileLink}>
                     <i className="fab fa-linkedin"></i>

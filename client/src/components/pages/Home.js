@@ -14,34 +14,32 @@ const Home = () => {
           </div>
           <div className="showcase-text">
             <h1 className="text-bolder" id="showcase-header">
-              Lorem ipsum dolor sit amet.
+              Create math worksheets from our array of supported topics!
             </h1>
             <p id="showcase-message">
-              Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-              officia deserunt mollit anim.Excepteur sint occaecat cupidatat non
-              proident, sunt in culpa qui officia deserunt mollit anim.Excepteur
-              sint occaecat cupidatat non proident, sunt in culpa qui officia
-              deserunt mollit anim.
+              MathPro aims to supplement free, online educational resources. 
+              MathPro is the only place on the Internet where users have access 
+              to an unlimited number of free math practice problems.
             </p>
           </div>
         </div>
+        <Link to="/custom/Algebra 1" className="subject-btn">
+          <div className="button-svg">
+            <ButtonSVG width="110px" height="101px" />
+          </div>
+          Algebra 1
+        </Link>
         <Link to="/custom/Algebra 2" className="subject-btn">
           <div className="button-svg">
             <ButtonSVG width="110px" height="101px" />
           </div>
           Algebra 2
         </Link>
-        <Link to="#" className="subject-btn">
+        <Link to="/custom/Calculus" className="subject-btn">
           <div className="button-svg">
             <ButtonSVG width="110px" height="101px" />
           </div>
-          <p>Coming Soon</p>
-        </Link>
-        <Link to="#" className="subject-btn">
-          <div className="button-svg">
-            <ButtonSVG width="110px" height="101px" />
-          </div>
-          Coming Soon
+          Calculus
         </Link>
         <Link to="#" className="subject-btn">
           <div className="button-svg">
