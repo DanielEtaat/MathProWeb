@@ -42,7 +42,7 @@ const AboutUsModal = () => {
               <h1>Our Team.</h1>
               <p className={aboutUsText}>
                 With the help of this talented, motivated, and selfless team,
-                MathPro is made available for free for all users. 
+                we offer MathPro as a free service for all users. 
               </p>
             </div>
             <div className={aboutUsProfiles}>
