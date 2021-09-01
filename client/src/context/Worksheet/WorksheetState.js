@@ -1,17 +1,19 @@
 import React, { useReducer } from "react";
 import WorksheetContext from "./WorksheetContext";
 import WorksheetReducer from "./WorksheetReducer";
-import { GET_QUESTIONS } from "../types";
+import { GET_QUESTIONS, SET_LOADING } from "../types";
 import axios from "axios";
 
 const WorksheetState = (props) => {
   const initialState = {
     jsonString: "",
+    loading: false,
   };
 
   const [state, dispatch] = useReducer(WorksheetReducer, initialState);
 
   const getQuestions = async (requestArray) => {
+    setLoading();
     try {
       const promises = requestArray.map((topicItem) =>
         axios.get(
@@ -31,10 +33,15 @@ const WorksheetState = (props) => {
     }
   };
 
+  const setLoading = () => {
+    dispatch({ type: SET_LOADING });
+  };
+
   return (
     <WorksheetContext.Provider
       value={{
         jsonString: state.jsonString,
+        loading: state.loading,
         getQuestions,
       }}
     >

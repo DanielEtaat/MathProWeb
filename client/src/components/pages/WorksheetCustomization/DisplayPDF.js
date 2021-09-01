@@ -1,10 +1,12 @@
 import React, { useContext, useEffect, useRef, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { jsPDF } from "jspdf";
+import html2canvas from "html2canvas";
+
 import CartContext from "../../../context/Cart/CartContext";
 import WorksheetContext from "../../../context/Worksheet/WorksheetContext";
 import PDF from "../PDF/PDF.js";
-import html2canvas from "html2canvas";
+import Spinner from "../../layout/Spinner";
 
 import { pdf } from "../PDF/PDF.module.css";
 import { buttonLeft, buttonRight } from "./WorksheetCustomization.module.css";
@@ -13,7 +15,7 @@ import { back, next } from "./Button.module.css";
 const DisplayPDF = () => {
   const { subjectName } = useParams();
   const { topicCart } = useContext(CartContext);
-  const { getQuestions, jsonString } = useContext(WorksheetContext);
+  const { loading, jsonString, getQuestions } = useContext(WorksheetContext);
   const [topics, setTopics] = useState([]);
 
   const pdfContainer = useRef(null);
@@ -62,7 +64,7 @@ const DisplayPDF = () => {
   return (
     <div className="content worksheet-customization-content">
       <div ref={pdfContainer} className={pdf}>
-        <PDF topics={topics} />
+        {loading ? <Spinner /> : <PDF topics={topics} />}
       </div>
       <div className={buttonLeft}>
         <Link to={`/custom/${subjectName}/order`}>
