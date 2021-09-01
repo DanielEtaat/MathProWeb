@@ -10,7 +10,7 @@ import {
   buttonRight,
 } from "./WorksheetCustomization.module.css";
 import { orderContainer, orderItemsContainer } from "./OrderTopics.module.css";
-import { back, next } from "./Button.module.css";
+import { back, prenext, next } from "./Button.module.css";
 
 const OrderTopics = () => {
   const { subjectName } = useParams();
@@ -91,7 +91,12 @@ const OrderTopics = () => {
         </div>
         <div className={buttonRight}>
           <Link to={`/custom/${subjectName}/pdf`}>
-            <button className={next}>Final Touch {">"}</button>
+            <button
+              disabled={topicCart?.length === 0}
+              className={topicCart?.length !== 0 ? next : prenext}
+            >
+              Final Touch {">"}
+            </button>
           </Link>
         </div>
       </div>
