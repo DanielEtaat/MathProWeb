@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link, useParams } from "react-router-dom";
 
 import {
@@ -8,14 +8,17 @@ import {
   buttonRight,
   header,
 } from "./WorksheetCustomization.module.css";
-import { back, next } from "./Button.module.css";
+import { back, prenext, next } from "./Button.module.css";
 import data from "../../../data/subjects.js";
 
+import CartContext from "../../../context/Cart/CartContext";
 import TopicGrid from "./TopicGrid";
 import ShoppingCart from "../../cart/ShoppingCart";
 
 const SelectTopics = () => {
   const { subjectName } = useParams();
+  const { topicCart } = useContext(CartContext);
+
   return (
     <div className="content worksheet-customization-content">
       <div className={shopping}>
@@ -32,7 +35,12 @@ const SelectTopics = () => {
       </div>
       <div className={buttonRight}>
         <Link to={`/custom/${subjectName}/order`}>
-          <button className={next}>Questions {">"}</button>
+          <button
+            disabled={topicCart?.length === 0}
+            className={topicCart?.length !== 0 ? next : prenext}
+          >
+            Questions {">"}
+          </button>
         </Link>
       </div>
     </div>
