@@ -14,14 +14,12 @@ const Home = () => {
           </div>
           <div className="showcase-text">
             <h1 className="text-bolder" id="showcase-header">
-              Lorem ipsum dolor sit amet.
+              Create math worksheets!
             </h1>
             <p id="showcase-message">
-              Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-              officia deserunt mollit anim.Excepteur sint occaecat cupidatat non
-              proident, sunt in culpa qui officia deserunt mollit anim.Excepteur
-              sint occaecat cupidatat non proident, sunt in culpa qui officia
-              deserunt mollit anim.
+              MathPro aims to supplement free, online educational resources. 
+              MathPro is the only place on the Internet where users have access 
+              to an unlimited number of free math practice problems.
             </p>
           </div>
         </div>
