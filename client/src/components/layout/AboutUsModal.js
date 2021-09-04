@@ -41,10 +41,8 @@ const AboutUsModal = () => {
             <div className={aboutUsTextContainer}>
               <h1>Our Team.</h1>
               <p className={aboutUsText}>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Pariatur eligendi, at dolorum unde molestias aperiam! Cupiditate
-                tenetur veritatis eos. Dolor alias dolorem deserunt vitae
-                aperiam saepe illo. Quisquam, eum illum.
+                With the help of this talented, motivated, and selfless team,
+                we offer MathPro as a free service for all users. 
               </p>
             </div>
             <div className={aboutUsProfiles}>
