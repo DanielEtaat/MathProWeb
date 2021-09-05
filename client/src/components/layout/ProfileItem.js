@@ -65,7 +65,9 @@ const ProfileItem = ({ name, title, imageSrc, linkedinURL, githubURL }) => {
             <a
               className={profileLink}
               id="linkedin-link"
+              aria-label="LinkedIn profile link"
               target="_blank"
+              rel="noreferrer"
               href={linkedinURL}
             >
               <i className="fab fa-linkedin" id="linkedin-icon"></i>
@@ -75,7 +77,9 @@ const ProfileItem = ({ name, title, imageSrc, linkedinURL, githubURL }) => {
             <a
               className={profileLink}
               id="github-link"
+              aria-label="GitHub profile link"
               target="_blank"
+              rel="noreferrer"
               href={githubURL}
             >
               <i className="fab fa-github-square" id="github-icon"></i>
