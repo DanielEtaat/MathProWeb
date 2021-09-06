@@ -29,6 +29,8 @@ const ProfileItem = ({ name, title, imageSrc, linkedinURL, githubURL }) => {
         e.preventDefault();
         setIsBackShown(!isBackShown);
         break;
+      default:
+        break;
     }
   };
 
