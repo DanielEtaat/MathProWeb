@@ -1,5 +1,7 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import ProfileItem from "./ProfileItem";
+
+import Nima from "./profile-images/NimaRahmanian.jpeg";
 import {
   modal,
   modalContent,
@@ -10,19 +12,16 @@ import {
   aboutUsTextContainer,
   aboutUsProfiles,
   profilesGrid,
-  profileItem,
-  profileTextContainer,
-  profileName,
-  profileTitle,
-  profileLink,
 } from "./AboutUsModal.module.css";
 
 const AboutUsModal = () => {
   const [isModalShown, toggleModal] = useState(false);
 
   const clickOffModal = (e) => {
-    e.preventDefault();
-    e.target.id === "modalBackground" && toggleModal(false);
+    if (e.target.id === "modalBackground") {
+      e.preventDefault();
+      toggleModal(false);
+    }
   };
 
   return (
@@ -47,69 +46,20 @@ const AboutUsModal = () => {
             </div>
             <div className={aboutUsProfiles}>
               <div className={profilesGrid}>
-                <div className={profileItem}>
-                  <div className={profileTextContainer}>
-                    <h2 className={profileName}>Name Surname</h2>
-                    <h3 className={profileTitle}>Founder & CEO</h3>
-                  </div>
-                  <Link to="/" className={profileLink}>
-                    <i className="fab fa-linkedin"></i>
-                  </Link>
-                </div>
-                <div className={profileItem}>
-                  <div className={profileTextContainer}>
-                    <h2 className={profileName}>Name Surname</h2>
-                    <h3 className={profileTitle}>Founder & CEO</h3>
-                  </div>
-                  <Link to="/" className={profileLink}>
-                    <i className="fab fa-linkedin"></i>
-                  </Link>
-                </div>
-                <div className={profileItem}>
-                  <div className={profileTextContainer}>
-                    <h2 className={profileName}>Name Surname</h2>
-                    <h3 className={profileTitle}>Founder & CEO</h3>
-                  </div>
-                  <Link to="/" className={profileLink}>
-                    <i className="fab fa-linkedin"></i>
-                  </Link>
-                </div>
-                <div className={profileItem}>
-                  <div className={profileTextContainer}>
-                    <h2 className={profileName}>Name Surname</h2>
-                    <h3 className={profileTitle}>Founder & CEO</h3>
-                  </div>
-                  <Link to="/" className={profileLink}>
-                    <i className="fab fa-linkedin"></i>
-                  </Link>
-                </div>
-                <div className={profileItem}>
-                  <div className={profileTextContainer}>
-                    <h2 className={profileName}>Name Surname</h2>
-                    <h3 className={profileTitle}>Founder & CEO</h3>
-                  </div>
-                  <Link to="/" className={profileLink}>
-                    <i className="fab fa-linkedin"></i>
-                  </Link>
-                </div>
-                <div className={profileItem}>
-                  <div className={profileTextContainer}>
-                    <h2 className={profileName}>Name Surname</h2>
-                    <h3 className={profileTitle}>Founder & CEO</h3>
-                  </div>
-                  <Link to="/" className={profileLink}>
-                    <i className="fab fa-linkedin"></i>
-                  </Link>
-                </div>
-                <div className={profileItem}>
-                  <div className={profileTextContainer}>
-                    <h2 className={profileName}>Name Surname</h2>
-                    <h3 className={profileTitle}>Founder & CEO</h3>
-                  </div>
-                  <Link to="/" className={profileLink}>
-                    <i className="fab fa-linkedin"></i>
-                  </Link>
-                </div>
+                <ProfileItem
+                  imageSrc={Nima}
+                  name="Name Surname"
+                  title="CEO & Founder"
+                  githubURL="https://www.apple.com/"
+                  linkedinURL="https://www.apple.com/"
+                />
+                <ProfileItem name="Name Surname" title="CEO & Founder" />
+                <ProfileItem name="Name Surname" title="CEO & Founder" />
+                <ProfileItem name="Name Surname" title="CEO & Founder" />
+                <ProfileItem name="Name Surname" title="CEO & Founder" />
+                <ProfileItem name="Name Surname" title="CEO & Founder" />
+                <ProfileItem name="Name Surname" title="CEO & Founder" />
+                <ProfileItem name="Name Surname" title="CEO & Founder" />
               </div>
             </div>
             <button
