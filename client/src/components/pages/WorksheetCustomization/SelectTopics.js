@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 
 import {
@@ -9,7 +9,7 @@ import {
   header,
 } from "./WorksheetCustomization.module.css";
 import { back, prenext, next } from "./Button.module.css";
-import data from "../../../data/subjects.js";
+import DataContext from "../../../context/Data/DataContext";
 
 import CartContext from "../../../context/Cart/CartContext";
 import TopicGrid from "./TopicGrid";
@@ -18,6 +18,11 @@ import ShoppingCart from "../../cart/ShoppingCart";
 const SelectTopics = () => {
   const { subjectName } = useParams();
   const { topicCart } = useContext(CartContext);
+  const { loading, availableTopics } = useContext(DataContext);
+  
+  while (loading); // wait until loading is false.
+  const data = availableTopics;
+  console.log("data", data);
 
   return (
     <div className="content worksheet-customization-content">

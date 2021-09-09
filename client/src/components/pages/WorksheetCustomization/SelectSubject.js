@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 import {
@@ -14,16 +14,21 @@ import {
   prenext,
   next,
 } from "./Button.module.css";
-import data from "../../../data/subjects.js";
+import DataContext from "../../../context/Data/DataContext";
 import ShoppingCart from "../../cart/ShoppingCart";
 
 const SelectSubject = () => {
-  const subjects = Object.keys(data);
+
+  const { loading, availableTopics } = useContext(DataContext);
 
   const [selectedSubject, setSelectedSubject] = useState("");
   const clickSubjectButton = (subject) => {
     setSelectedSubject(subject === selectedSubject ? "" : subject);
   };
+
+  while (loading); // wait until loading is false.
+  const data = availableTopics;
+  console.log("data", data);
 
   return (
     <div className="content worksheet-customization-content">
@@ -33,7 +38,7 @@ const SelectSubject = () => {
       <div className={content}>
         <p className={header}>Worksheet Customization</p>
         <div className={buttons}>
-          {subjects.map((subject) => (
+          {Object.keys(data).map((subject) => (
             <button
               key={subject}
               className={

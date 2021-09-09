@@ -11,12 +11,15 @@ import OrderTopics from "./components/pages/WorksheetCustomization/OrderTopics";
 import DisplayPDF from "./components/pages/WorksheetCustomization/DisplayPDF";
 import CartState from "./context/Cart/CartState";
 import WorksheetState from "./context/Worksheet/WorksheetState";
+import DataState from "./context/Data/DataState";
+
 
 import "./App.css";
 
 const App = () => {
   return (
     <Router>
+      <DataState>
       <CartState>
         <WorksheetState>
           <div className="wrapper">
@@ -44,6 +47,7 @@ const App = () => {
           </div>
         </WorksheetState>
       </CartState>
+      </DataState>
     </Router>
   );
 };
