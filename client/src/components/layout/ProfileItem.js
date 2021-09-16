@@ -27,6 +27,7 @@ const ProfileItem = ({ name, title, imageSrc, linkedinURL, githubURL }) => {
       case "profile-name":
       case "profile-title":
         e.preventDefault();
+        if (!linkedinURL && !githubURL) break;
         setIsBackShown(!isBackShown);
         break;
       default:
