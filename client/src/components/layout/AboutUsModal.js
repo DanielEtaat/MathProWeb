@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import ProfileItem from "./ProfileItem";
+import staffList from "./staff";
 
-import Nima from "./profile-images/NimaRahmanian.jpeg";
 import {
   modal,
   modalContent,
@@ -40,26 +40,22 @@ const AboutUsModal = () => {
             <div className={aboutUsTextContainer}>
               <h1>Our Team.</h1>
               <p className={aboutUsText}>
-                With the help of this talented, motivated, and selfless team,
-                we offer MathPro as a free service for all users. 
+                With the help of this talented, motivated, and selfless team, we
+                offer MathPro as a free service for all users.
               </p>
             </div>
             <div className={aboutUsProfiles}>
               <div className={profilesGrid}>
-                <ProfileItem
-                  imageSrc={Nima}
-                  name="Name Surname"
-                  title="CEO & Founder"
-                  githubURL="https://www.apple.com/"
-                  linkedinURL="https://www.apple.com/"
-                />
-                <ProfileItem name="Name Surname" title="CEO & Founder" />
-                <ProfileItem name="Name Surname" title="CEO & Founder" />
-                <ProfileItem name="Name Surname" title="CEO & Founder" />
-                <ProfileItem name="Name Surname" title="CEO & Founder" />
-                <ProfileItem name="Name Surname" title="CEO & Founder" />
-                <ProfileItem name="Name Surname" title="CEO & Founder" />
-                <ProfileItem name="Name Surname" title="CEO & Founder" />
+                {staffList.map((staff) => (
+                  <ProfileItem
+                    key={staff.name}
+                    imageSrc={staff.imageSrc}
+                    name={staff.name}
+                    title={staff.title}
+                    githubURL={staff.githubURL}
+                    linkedinURL={staff.linkedinURL}
+                  />
+                ))}
               </div>
             </div>
             <button
