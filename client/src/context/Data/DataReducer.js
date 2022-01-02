@@ -1,7 +1,7 @@
 import { GET_DATA, SET_LOADING } from "../types";
 
 const DataReducer = (state, action) => {
-  console.log("payload", action.payload);
+  // console.log("payload", action.payload);
   switch (action.type) {
     case GET_DATA:
       const d = {

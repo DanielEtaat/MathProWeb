@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 
 import {
@@ -28,7 +28,7 @@ const SelectSubject = () => {
 
   while (loading); // wait until loading is false.
   const data = availableTopics;
-  console.log("data", data);
+  // console.log("data", data);
 
   return (
     <div className="content worksheet-customization-content">
