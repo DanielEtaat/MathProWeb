@@ -9,7 +9,7 @@ const DataReducer = (state, action) => {
         availableTopics: action.payload,
         loading: false,
       };
-      console.log("d", d);
+      // console.log("available_data result", d);
       return d;
     case SET_LOADING:
       return {

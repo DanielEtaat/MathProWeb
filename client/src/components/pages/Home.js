@@ -23,23 +23,23 @@ const Home = () => {
             </p>
           </div>
         </div>
+        <Link to="/custom/Algebra 1" className="subject-btn">
+          <div className="button-svg">
+            <ButtonSVG width="110px" height="101px" />
+          </div>
+          Algebra 1
+        </Link>
         <Link to="/custom/Algebra 2" className="subject-btn">
           <div className="button-svg">
             <ButtonSVG width="110px" height="101px" />
           </div>
           Algebra 2
         </Link>
-        <Link to="#" className="subject-btn">
+        <Link to="/custom/Calculus" className="subject-btn">
           <div className="button-svg">
             <ButtonSVG width="110px" height="101px" />
           </div>
-          <p>Coming Soon</p>
-        </Link>
-        <Link to="#" className="subject-btn">
-          <div className="button-svg">
-            <ButtonSVG width="110px" height="101px" />
-          </div>
-          Coming Soon
+          Calculus
         </Link>
         <Link to="#" className="subject-btn">
           <div className="button-svg">

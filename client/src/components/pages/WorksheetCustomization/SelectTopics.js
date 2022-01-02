@@ -20,9 +20,10 @@ const SelectTopics = () => {
   const { topicCart } = useContext(CartContext);
   const { loading, availableTopics } = useContext(DataContext);
   
+  // console.log("waiting for available_data to complete", loading);
   while (loading); // wait until loading is false.
   const data = availableTopics;
-  console.log("data", data);
+  // console.log("data", data);
 
   return (
     <div className="content worksheet-customization-content">
