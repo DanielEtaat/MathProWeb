@@ -16,6 +16,7 @@ const Home = () => {
             <h1 className="text-bolder" id="showcase-header">
               Create math worksheets!
             </h1>
+            <br></br>
             <p id="showcase-message">
               MathPro aims to supplement free, online educational resources. 
               MathPro is the only place on the Internet where users have access 
@@ -59,23 +60,6 @@ const Home = () => {
           </div>
           Coming Soon
         </Link>
-      </section>
-      <section className="memo">
-        We have generated over<span className="text-bold"> 10,000 </span>
-        worksheets
-      </section>
-      <section className="sample">
-        <div className="rectangles-container">
-          <div className="rectangle"></div>
-          <div className="rectangle rectangle-short"></div>
-          <div className="rectangle rectangle-short"></div>
-          <div className="rectangle"></div>
-        </div>
-        <div className="samples-container">
-          <div className="sample-temp"></div>
-          <div className="sample-temp"></div>
-          <div className="sample-temp"></div>
-        </div>
       </section>
     </div>
   );
