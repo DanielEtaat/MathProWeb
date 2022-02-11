@@ -1,10 +1,19 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 import { ReactComponent as ShowcaseSVG } from "../../showcase.svg";
 import { ReactComponent as ButtonSVG } from "../../subject_button.svg";
+import DataContext from "../../context/Data/DataContext";
 
 const Home = () => {
+  const { loading, getData, hasLoaded } = useContext(DataContext);
+  
+  useEffect(() => {
+    if (!(hasLoaded() || loading)) {
+      getData();
+    }
+  });
+
   return (
     <div className="content home-content">
       <section className="hero">
