@@ -20,7 +20,6 @@ const DataState = (props) => {
     const getData = async () => {
       setLoading();
       try {
-        // console.log("Start loading data.");
         const availableTopics = (await axios.get(`https://puxec9.deta.dev/keys`)).data;  
         dispatch({ type: GET_DATA, payload: availableTopics });
       } catch (err) {

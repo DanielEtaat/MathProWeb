@@ -19,20 +19,15 @@ const SelectTopics = () => {
   const { subjectName } = useParams();
   const { topicCart } = useContext(CartContext);
   const { loading, availableTopics } = useContext(DataContext);
-  
-  // console.log("waiting for available_data to complete", loading);
-  while (loading); // wait until loading is false.
-  const data = availableTopics;
-  // console.log("data", data);
 
-  return (
+  return !loading && (
     <div className="content worksheet-customization-content">
       <div className={shopping}>
         <ShoppingCart />
       </div>
       <div className={content}>
         <p className={header}>{subjectName}</p>
-        <TopicGrid topicsMap={data[subjectName]} />
+        <TopicGrid topicsMap={availableTopics[subjectName]} />
       </div>
       <div className={buttonLeft}>
         <Link to="/custom/">

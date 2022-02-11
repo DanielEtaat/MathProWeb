@@ -26,11 +26,7 @@ const SelectSubject = () => {
     setSelectedSubject(subject === selectedSubject ? "" : subject);
   };
 
-  while (loading); // wait until loading is false.
-  const data = availableTopics;
-  // console.log("data", data);
-
-  return (
+  return !loading && (
     <div className="content worksheet-customization-content">
       <div className={shopping}>
         <ShoppingCart />
@@ -38,7 +34,7 @@ const SelectSubject = () => {
       <div className={content}>
         <p className={header}>Worksheet Customization</p>
         <div className={buttons}>
-          {Object.keys(data).map((subject) => (
+          {Object.keys(availableTopics).map((subject) => (
             <button
               key={subject}
               className={
