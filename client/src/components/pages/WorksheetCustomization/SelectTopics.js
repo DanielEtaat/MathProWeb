@@ -9,7 +9,7 @@ import {
   header,
 } from "./WorksheetCustomization.module.css";
 import { back, prenext, next } from "./Button.module.css";
-import data from "../../../data/subjects.js";
+import DataContext from "../../../context/Data/DataContext";
 
 import CartContext from "../../../context/Cart/CartContext";
 import TopicGrid from "./TopicGrid";
@@ -18,15 +18,16 @@ import ShoppingCart from "../../cart/ShoppingCart";
 const SelectTopics = () => {
   const { subjectName } = useParams();
   const { topicCart } = useContext(CartContext);
+  const { loading, availableTopics } = useContext(DataContext);
 
-  return (
+  return !loading && (
     <div className="content worksheet-customization-content">
       <div className={shopping}>
         <ShoppingCart />
       </div>
       <div className={content}>
         <p className={header}>{subjectName}</p>
-        <TopicGrid topicsMap={data[subjectName]} />
+        <TopicGrid topicsMap={availableTopics[subjectName]} />
       </div>
       <div className={buttonLeft}>
         <Link to="/custom/">

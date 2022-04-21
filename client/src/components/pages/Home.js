@@ -1,10 +1,19 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 import { ReactComponent as ShowcaseSVG } from "../../showcase.svg";
 import { ReactComponent as ButtonSVG } from "../../subject_button.svg";
+import DataContext from "../../context/Data/DataContext";
 
 const Home = () => {
+  const { loading, getData, hasLoaded } = useContext(DataContext);
+  
+  useEffect(() => {
+    if (!(hasLoaded || loading)) {
+      getData();
+    }
+  });
+
   return (
     <div className="content home-content">
       <section className="hero">
@@ -16,6 +25,7 @@ const Home = () => {
             <h1 className="text-bolder" id="showcase-header">
               Create math worksheets!
             </h1>
+            <br></br>
             <p id="showcase-message">
               MathPro aims to supplement free, online educational resources. 
               MathPro is the only place on the Internet where users have access 
@@ -23,17 +33,23 @@ const Home = () => {
             </p>
           </div>
         </div>
+        <Link to="/custom/Algebra 1" className="subject-btn">
+          <div className="button-svg">
+            <ButtonSVG width="110px" height="101px" />
+          </div>
+          Algebra 1
+        </Link>
         <Link to="/custom/Algebra 2" className="subject-btn">
           <div className="button-svg">
             <ButtonSVG width="110px" height="101px" />
           </div>
           Algebra 2
         </Link>
-        <Link to="#" className="subject-btn">
+        <Link to="/custom/Calculus" className="subject-btn">
           <div className="button-svg">
             <ButtonSVG width="110px" height="101px" />
           </div>
-          <p>Coming Soon</p>
+          Calculus
         </Link>
         <Link to="#" className="subject-btn">
           <div className="button-svg">
@@ -53,29 +69,6 @@ const Home = () => {
           </div>
           Coming Soon
         </Link>
-        <Link to="#" className="subject-btn">
-          <div className="button-svg">
-            <ButtonSVG width="110px" height="101px" />
-          </div>
-          Coming Soon
-        </Link>
-      </section>
-      <section className="memo">
-        We have generated over<span className="text-bold"> 10,000 </span>
-        worksheets
-      </section>
-      <section className="sample">
-        <div className="rectangles-container">
-          <div className="rectangle"></div>
-          <div className="rectangle rectangle-short"></div>
-          <div className="rectangle rectangle-short"></div>
-          <div className="rectangle"></div>
-        </div>
-        <div className="samples-container">
-          <div className="sample-temp"></div>
-          <div className="sample-temp"></div>
-          <div className="sample-temp"></div>
-        </div>
       </section>
     </div>
   );
