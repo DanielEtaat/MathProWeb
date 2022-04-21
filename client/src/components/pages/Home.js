@@ -9,7 +9,7 @@ const Home = () => {
   const { loading, getData, hasLoaded } = useContext(DataContext);
   
   useEffect(() => {
-    if (!(hasLoaded() || loading)) {
+    if (!(hasLoaded || loading)) {
       getData();
     }
   });

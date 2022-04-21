@@ -8,7 +8,7 @@ const DataState = (props) => {
   const initialState = {
     availableTopics: "",
     loading: false,
-    loaded: false,
+    hasLoaded: false,
   };
   
   const [state, dispatch] = useReducer(DataReducer, initialState);
@@ -16,10 +16,6 @@ const DataState = (props) => {
   const setLoading = () => {
     dispatch({ type: SET_LOADING });
   };
-
-  const hasLoaded = () => {
-    return state.loaded;
-  }
 
   const getData = async () => {
     setLoading();
@@ -37,7 +33,7 @@ const DataState = (props) => {
         availableTopics: state.availableTopics,
         loading: state.loading,
         getData: getData,
-        hasLoaded: hasLoaded,
+        hasLoaded: state.loaded,
       }}
     >
       {props.children}

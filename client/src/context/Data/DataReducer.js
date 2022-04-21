@@ -7,7 +7,7 @@ const DataReducer = (state, action) => {
         ...state,
         availableTopics: action.payload,
         loading: false,
-        loaded: true,
+        hasLoaded: true,
       };
       return d;
     case SET_LOADING:
